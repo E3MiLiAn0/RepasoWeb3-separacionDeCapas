@@ -1,0 +1,61 @@
+﻿@model IEnumerable<ExamenWeb3.Entidades.Venta>
+
+@{
+    ViewData["Title"] = "Lista de Ventas";
+}
+
+<h1>Lista de Ventas</h1>
+
+<p>
+    <a class="btn-primary p-2" asp-action="RegistrarVenta">Crear Nueva Venta</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cliente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CantitadTotal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PrecioUnitario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Total)
+            </th>
+            <th>
+                Accion
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cliente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CantitadTotal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrecioUnitario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Total)
+            </td>
+            <td class="text-white text-decoration-none">
+               <button class="bg-danger p-1 border-0 text-white text-decoration-none">
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+               </button> 
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -2,7 +2,7 @@
 using ExamenWeb3.Entidades;
 using ExamenWeb3.Servicio;
 using ExamenWeb3.Models;
-
+using System.Collections.Generic;
 namespace ExamenWeb3.Controllers
 {
     public class VentaController : Controller
@@ -14,14 +14,13 @@ namespace ExamenWeb3.Controllers
             _ventaServicio = ventaServicio;
         }
 
-        public ActionResult VentaSaludo()
-        {
-            Venta venta = new Venta();
-            
-            VentaModelView ventaModelView = new VentaModelView();
-            ventaModelView.nombre = _ventaServicio.saludar(venta);
+      
 
-            return View(ventaModelView);
+        public IActionResult ListaVenta()
+        {
+            
+            List<Venta> listcaDeVEntas = _ventaServicio.ListaVenta();
+            return View(listcaDeVEntas);
         }
     }
 }

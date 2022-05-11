@@ -9,6 +9,20 @@ namespace ExamenWeb3.Servicio
 {
     public class VentaImpl : IVentaServicio
     {
+
+        static Venta venta = new Venta();
+        List<Venta> listaVenta = venta.GetVenta();
+        public List<Venta> ListaVenta()
+            
+        {
+            return listaVenta;
+        }
+
+        public void RegistrarVenta(Venta venta)
+        {
+            throw new NotImplementedException();
+        }
+
         public string saludar(Venta nombre)
 
         {
