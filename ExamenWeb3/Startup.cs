@@ -54,7 +54,7 @@ namespace ExamenWeb3
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=PresentacionWeb3}/{action=Bienvenidxs}/");
             });
         }
     }
