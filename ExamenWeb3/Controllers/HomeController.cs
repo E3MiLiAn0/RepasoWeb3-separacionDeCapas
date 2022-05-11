@@ -25,7 +25,9 @@ namespace ExamenWeb3.Controllers
 
         public IActionResult Privacy()
         {
-            return View();
+            string mensje = "mensaje de error";
+            ViewBag.mensje = mensje;
+            return View(mensje);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

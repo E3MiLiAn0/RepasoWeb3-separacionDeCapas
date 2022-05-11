@@ -22,5 +22,23 @@ namespace ExamenWeb3.Controllers
             List<Venta> listcaDeVEntas = _ventaServicio.ListaVenta();
             return View(listcaDeVEntas);
         }
+        public ActionResult RegistrarVenta()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult RegistrarVenta(Venta ventaCreada)
+        {
+
+            if (ModelState.IsValid)
+            {
+                _ventaServicio.RegistrarVenta(ventaCreada);
+                return RedirectToAction("ListaVenta");
+            }
+
+            return RedirectToAction("Privacy","Home");
+
+        }
     }
 }

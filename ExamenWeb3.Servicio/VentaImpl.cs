@@ -20,7 +20,16 @@ namespace ExamenWeb3.Servicio
 
         public void RegistrarVenta(Venta venta)
         {
-            throw new NotImplementedException();
+            if(venta != null)
+            {
+                int id = listaVenta.Count + 1;
+
+                venta.id = id;
+                venta.Total = (venta.PrecioUnitario * venta.CantitadTotal) * 1.21;
+
+                listaVenta.Add(venta);
+            }
+
         }
 
         public string saludar(Venta nombre)

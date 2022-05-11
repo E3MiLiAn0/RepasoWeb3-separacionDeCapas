@@ -9,7 +9,6 @@ namespace ExamenWeb3.Servicio
       public  String saludar(Venta nombre);
       public void RegistrarVenta(Venta venta);
       public List<Venta> ListaVenta();
-        
 
     }
 }
