@@ -18,7 +18,7 @@ namespace ExamenWeb3.Entidades
         public int CantitadTotal { get; set; }
 
         [Range(10, 999, ErrorMessage = "PrecioUnitario debe ser un valor entre 1-999")]
-        [Required(ErrorMessage = "PrecioUnitario es requerido")]
+        [Required(ErrorMessage = "PrecioUnitario es requeridos")]
         public double PrecioUnitario { get; set; }
 
         public double Total { get; set; }
